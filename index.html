@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8bfd5">
+  <title>Mi reto de ahorro | C$10,000</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="app">
+
+    <header class="header">
+      <p class="eyebrow">♡ MI MONEYBOX ♡</p>
+      <h1>Mi reto de <span>ahorro</span></h1>
+      <p class="subtitle">
+        Cada cantidad cuenta. Marca tus casillas y alcanza tu meta.
+      </p>
+    </header>
+
+    <section class="moneybox">
+      <div class="box-top">
+        <div class="slot"></div>
+        <div class="coin-hole"></div>
+      </div>
+
+      <div class="box-face">
+        <div class="box-title">
+          <span>MONEYBOX</span>
+          <span class="mini-heart">♡</span>
+        </div>
+
+        <div id="amountGrid" class="amount-grid"></div>
+
+        <div class="box-footer">
+          <span>MI META DE AHORRO</span>
+          <strong>C$10,000</strong>
+        </div>
+      </div>
+
+      <div class="box-side"></div>
+    </section>
+
+    <section class="summary">
+      <div class="summary-top">
+        <div>
+          <p class="label">TOTAL AHORRADO</p>
+          <p id="savedAmount" class="saved">C$0</p>
+        </div>
+
+        <div class="goal">
+          <p class="label">MI META</p>
+          <p class="goal-amount">C$10,000</p>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+
+      <div class="progress-info">
+        <span id="progressPercent">0% completado</span>
+        <span id="remainingAmount">Faltan C$10,000</span>
+      </div>
+    </section>
+
+    <section class="board-controls">
+      <div>
+        <h2>Mi tablero</h2>
+        <p class="small-text">
+          <span id="checkedCount">0</span> de
+          <span id="totalCount">0</span> casillas marcadas
+        </p>
+      </div>
+
+      <button id="resetButton" class="reset-button" type="button">
+        Reiniciar
+      </button>
+    </section>
+
+    <section class="tools">
+      <input
+        id="searchAmount"
+        type="search"
+        placeholder="Buscar cantidad..."
+        inputmode="numeric"
+        aria-label="Buscar cantidad"
+      >
+
+      <select id="sortAmounts" aria-label="Ordenar cantidades">
+        <option value="mixed">Orden original</option>
+        <option value="asc">Menor a mayor</option>
+        <option value="desc">Mayor a menor</option>
+      </select>
+    </section>
+
+    <p class="instructions">
+      ♡ Toca una casilla cuando guardes esa cantidad.
+      Puedes volver a tocarla para desmarcarla.
+    </p>
+
+    <footer>
+      <p>HECHO CON AMOR, UN AHORRO A LA VEZ ♡</p>
+      <p class="footer-note">Tu progreso se guarda en este navegador.</p>
+    </footer>
+
+  </main>
+
+  <dialog id="resetDialog" class="dialog">
+    <form method="dialog">
+      <h2>¿Empezar de nuevo?</h2>
+      <p>Se desmarcarán todas las casillas de tu reto.</p>
+
+      <div class="dialog-buttons">
+        <button class="cancel-button" value="cancel">Cancelar</button>
+        <button
+          id="confirmReset"
+          class="confirm-button"
+          value="confirm"
+        >
+          Reiniciar reto
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
